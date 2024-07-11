@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './components/auth/auth.component';
 import { UnauthGuard } from './guards/unauth.guard';
-import { AUTH_ROUTE } from 'src/app/routes/routes';
+import { AUTH_PATH } from 'src/app/paths/paths';
 
 const routes: Routes = [
     {
-        path: AUTH_ROUTE,
+        path: AUTH_PATH,
         component: AuthComponent,
         pathMatch: 'full',
         canActivate: [
