@@ -1,0 +1,153 @@
+$squarew: 15px;
+$squareh: 15px;
+$squaremargin: 5px;
+$loaderw: $squarew * 3 + $squaremargin * 2;
+$loaderh: $squareh * 3 + $squaremargin * 2;
+$delayenter: 0.3s;
+$topenter: -10px;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+@mixin transition($value) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  transition: $value;
+}
+
+@mixin delay($delay) {
+  -webkit-animation-delay: $delay;
+  -moz-animation-delay: $delay;
+  animation-delay: $delay;
+}
+@-webkit-keyframes enter {
+  0% {
+    opacity: 0;
+    top: $topenter;
+  }
+  5% {
+    opacity: 1;
+    top: 0px;
+  }
+  50.9% {
+    opacity: 1;
+    top: 0px;
+  }
+  55.9% {
+    opacity: 0;
+    top: -$topenter;
+  }
+}
+@keyframes enter {
+  0% {
+    opacity: 0;
+    top: $topenter;
+  }
+  5% {
+    opacity: 1;
+    top: 0px;
+  }
+  50.9% {
+    opacity: 1;
+    top: 0px;
+  }
+  55.9% {
+    opacity: 0;
+    top: -$topenter;
+  }
+}
+@-moz-keyframes enter {
+  0% {
+    opacity: 0;
+    top: $topenter;
+  }
+  5% {
+    opacity: 1;
+    top: 0px;
+  }
+  50.9% {
+    opacity: 1;
+    top: 0px;
+  }
+  55.9% {
+    opacity: 0;
+    top: -$topenter;
+  }
+}
+
+.cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  gap: 30px;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  z-index: 9999;
+  overflow-y: hidden;
+}
+
+.square {
+  background: #3ea1a5;
+  width: $squarew;
+  height: $squareh;
+  float: left;
+  top: $topenter;
+  margin-right: $squaremargin;
+  margin-top: $squaremargin;
+  position: relative;
+  opacity: 0;
+  -webkit-animation: enter 6s infinite;
+  animation: enter 6s infinite;
+}
+.enter {
+  top: 0px;
+  opacity: 1;
+}
+.square:nth-child(1) {
+  @include delay(6 * $delayenter);
+}
+.square:nth-child(2) {
+  @include delay(7 * $delayenter);
+  background: linear-gradient(89deg, #3ea1a5, #65cd23);
+}
+.square:nth-child(3) {
+  @include delay(8 * $delayenter);
+  background: #65cd23;
+}
+.square:nth-child(4) {
+  @include delay(3 * $delayenter);
+  // background: #65cd23;
+}
+.square:nth-child(5) {
+  @include delay(4 * $delayenter);
+  background: linear-gradient(45deg, #3ea1a5, #65cd23);
+}
+.square:nth-child(6) {
+  @include delay(5 * $delayenter);
+  background: linear-gradient(10deg, #3ea1a5, #65cd23);
+}
+.square:nth-child(7) {
+}
+.square:nth-child(8) {
+  @include delay(1 * $delayenter);
+}
+.square:nth-child(9) {
+  @include delay(2 * $delayenter);
+}
+.clear {
+  clear: both;
+}
+.last {
+  margin-right: 0;
+}

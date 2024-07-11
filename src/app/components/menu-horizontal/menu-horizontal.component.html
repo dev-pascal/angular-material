@@ -1,0 +1,42 @@
+<nav>
+  <div class="container-img">
+    <!-- Insert logo here -->
+  </div>
+  <div class="menu" *ngIf="isLoggedIn">
+    <button mat-button [matMenuTriggerFor]="one">
+      Menu 1
+    </button>
+    <button mat-button [matMenuTriggerFor]="two">
+      Menu 2
+    </button>
+  </div>
+  <mat-menu #one="matMenu">
+    <button mat-menu-item>
+      Sub-Menu 1
+    </button>
+    <button mat-menu-item>
+      Sub-Menu 2
+    </button>
+  </mat-menu>
+  <mat-menu #two="matMenu">
+    <button mat-menu-item>
+      Sub-Menu 1
+    </button>
+    <button mat-menu-item>
+      Sub-Menu 2
+    </button>
+  </mat-menu>
+  <div *ngIf="isLoggedIn" class="auth">
+    <mat-icon>
+      account_circle
+    </mat-icon>
+    <button mat-button class="username" [matMenuTriggerFor]="auth">
+      {{ username }}
+    </button>
+    <mat-menu #auth="matMenu" xPosition="before">
+      <button mat-menu-item (click)="logOut()">
+        Cerrar sesión
+      </button>
+    </mat-menu>
+  </div>
+</nav>

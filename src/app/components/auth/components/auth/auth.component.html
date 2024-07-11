@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="wrap">
+    <div class="tarjeta-wrap">
+      <div class="tarjeta" [class]="activeRegister == true ? 'activeRegister': 'activeLogin'">
+        <div class="adelante">
+          <app-login (swapEvt)="swapCard()"></app-login>
+        </div>
+        <div class="atras">
+          <app-register (swapEvt)="swapCard()"></app-register>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

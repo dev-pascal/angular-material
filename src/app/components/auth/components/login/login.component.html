@@ -1,0 +1,17 @@
+<div class="container-inputs">
+    <div class="container-inputs-inp">
+        <form [formGroup]="loginForm">
+            <div class="input-search">
+                <input placeholder="E-mail" type="email" formControlName="username">
+            </div>
+            <br>
+            <div class="input-search">
+                <input placeholder="Password" type="password" formControlName="password">
+            </div>
+        </form>
+        <div class="btn-search">
+            <button (click)="onClickLogin()">SIGN IN</button>
+            <button (click)="onClickRegister()">SIGN UP</button>
+        </div>
+    </div>
+</div>

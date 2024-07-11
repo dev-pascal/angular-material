@@ -1,0 +1,44 @@
+@import "../../../variables";
+
+.menu-vertical {
+  z-index: 9990 !important;
+}
+.mat-mdc-button {
+  color: white !important;
+  margin-inline: 15px;
+}
+.menu {
+  align-self: center;
+}
+nav {
+  background-color: $turquoise;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 5px 30px;
+}
+.container-img {
+  width: 120px;
+  height: 48px;
+  padding-right: 5px;
+}
+.container-img > img {
+  width: 100%;
+}
+.material-icons.mat-icon {
+  display: flex;
+  color: white;
+}
+$user-icon-size: 45px;
+mat-icon {
+  font-size: $user-icon-size;
+  width: $user-icon-size;
+  height: $user-icon-size;
+}
+.auth {
+  align-self: center;
+  display: flex;
+}
+.username {
+  align-self: center;
+}
