@@ -1,1 +1,1 @@
-# Template Front-end Angular Material App
+# Template Front-end Angular Material App && SCSS
